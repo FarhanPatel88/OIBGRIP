@@ -13,7 +13,7 @@ body {
 #header {
     min-width: 100%;
     min-height: 50vh;
-    background-image: url('/flag.jpg');
+    background-image: url('flag.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
