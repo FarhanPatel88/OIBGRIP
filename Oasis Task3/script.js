@@ -34,3 +34,11 @@ childrens.forEach((element) => {
         }
     });
 });
+
+let tasks = Array.from(document.getElementById('right-section').children);
+
+tasks.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.path[1].remove();
+    });
+});
