@@ -167,3 +167,11 @@ span {
     font-weight: 100;
     color: purple;
 }
+
+#creator {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.3rem;
+    color: purple;
+}
