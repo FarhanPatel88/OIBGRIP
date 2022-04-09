@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round:regular" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <title>MyToDO</title>
+    </head>
+    <body>
+        <header id="title">
+            <h1>MyToDo</h1>
+        </header>
+        <main id="content">
+            <section id="left-section">
+                <div id="form-control">
+                    <form name="newTask" method="post">
+                        <input required type="text" name="name" id="name" placeholder="Add a task" autocomplete="false" />
+                        <textarea required name="description" id="description" cols="30" rows="5" placeholder="Add a description"></textarea>
+                        <button name="submit" type="submit" id="submitButton">Submit</button>
+                    </form>
+                </div>
+                <div id="pending-tasks">
+                    <h3>Pending Tasks <span>(Click on task when completed!)</span></h3>
+                    <ul></ul>
+                </div>
+            </section>
+            <section id="right-section">
+                <h3>Completed Tasks</h3>
+                <ul></ul>
+            </section>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>
