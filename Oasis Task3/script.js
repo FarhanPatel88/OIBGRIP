@@ -13,32 +13,24 @@ document.forms['newTask']['submit'].addEventListener('click', (event) => {
     document.forms['newTask']['description'].value = '';
 });
 
-let childrens = Array.from(document.getElementById('pending-tasks').children);
-
-childrens.forEach((element) => {
-    element.addEventListener('click', (event) => {
-        let content = null;
-        if (event.path[0].nodeName == 'LI') {
-            content = event.path[0].children[0] ? event.path[0].children[0].textContent : event.path[0].textContent;
-            event.path[0].remove();
-        } else if (event.path[1].nodeName == 'LI') {
-            content = event.path[1].children[0] ? event.path[1].children[0].textContent : event.path[1].textContent;
-            event.path[1].remove();
-        }
-        if (content) {
-            let li = document.createElement('li');
-            let h4 = document.createElement('h4');
-            h4.textContent = content;
-            li.append(h4);
-            document.getElementById('right-section').children[1].append(li);
-        }
-    });
+document.getElementById('pending-tasks').children[1].addEventListener('click', (event) => {
+    let content = null;
+    if (event.path[0].nodeName == 'LI') {
+        content = event.path[0].children[0] ? event.path[0].children[0].textContent : event.path[0].textContent;
+        event.path[0].remove();
+    } else if (event.path[1].nodeName == 'LI') {
+        content = event.path[1].children[0] ? event.path[1].children[0].textContent : event.path[1].textContent;
+        event.path[1].remove();
+    }
+    if (content) {
+        let li = document.createElement('li');
+        let h4 = document.createElement('h4');
+        h4.textContent = content;
+        li.append(h4);
+        document.getElementById('right-section').children[1].append(li);
+    }
 });
 
-let tasks = Array.from(document.getElementById('right-section').children);
-
-tasks.forEach((element) => {
-    element.addEventListener('click', (event) => {
-        event.path[1].remove();
-    });
+document.getElementById('right-section').children[1].addEventListener('click', (event) => {
+    event.path[1].localName == 'li' ? event.path[1].remove() : null;
 });
